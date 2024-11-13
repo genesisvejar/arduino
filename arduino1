@@ -1,0 +1,37 @@
+
+  int in1 = 6;
+  int in2 = 7;
+  int in3 = 8;
+  int in4 = 9;
+  int ena = 5;
+  int enb = 10;
+
+
+
+void setup() {
+  pinMode(in1, OUTPUT); //to send signal to the board
+  pinMode(in2, OUTPUT); 
+  pinMode(in3, OUTPUT);
+  pinMode(in4, OUTPUT);
+  pinMode(ena, OUTPUT);
+  pinMode(enb, OUTPUT);
+  
+
+}
+
+void loop() {
+ digitalWrite(in1, HIGH); //send 5 vols
+ digitalWrite(in2, LOW); //send 0 vols
+ digitalWrite(in3, HIGH);
+ digitalWrite(in4, LOW);
+ 
+ analogWrite(ena, 100); // what happpens if you go over the max 255?
+ analogWrite(enb, 100);
+ delay(6000); // it loops for x second
+
+ digitalWrite(in1, LOW); // you change the ones that were high to low
+ digitalWrite(in3, LOW);
+ delay(15000); // it stops x second
+
+ 
+}
